@@ -4,15 +4,13 @@ from typing import List, Tuple
 @dataclass
 class StockDataPoint:
     """Represents a single stock data entry."""
+    date: str  # Stock trading date
     open: float
     high: float
     low: float
     close: float
     volume: float
-    sma_10: float
-    ema_10: float
-    rsi: float
-    macd: float
+    ticker: str  # Stock symbol (e.g., AAPL, TSLA)
 
 @dataclass
 class ProcessedStockData:

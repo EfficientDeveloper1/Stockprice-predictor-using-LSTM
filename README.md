@@ -14,6 +14,8 @@ This project utilizes a Long Short-Term Memory (LSTM) neural network to predict 
 stock_prediction/
 │── data/
 │   ├── AAPL.csv  # Stock price dataset
+│   └── AMZN_stock_data.csv
+│   └── NVDA_stock_data.csv
 │── models/
 │   ├── lstm_model.pth  # Trained model
 │── src/
@@ -33,7 +35,27 @@ stock_prediction/
 
 ## Setup Instructions
 ### **1. Install Dependencies**
-Ensure you have Python 3.8+ installed, then run:
+Ensure you have Python 3.8+ installed, then:
+#### create python environment 
+* Unix/Mac
+```sh
+python3 -m venv stock_prediction
+```
+* Windows
+```sh
+python -m venv stock_prediction
+```
+#### Activate the environment
+* Unix/Mac
+```sh
+source stock_prediction/bin/activate
+```
+* Windows
+```sh
+stock_prediction\Scripts\activate
+```
+#### Install dependencies
+
 ```sh
 pip install -r requirements.txt
 ```
@@ -48,7 +70,7 @@ To train the LSTM model on the stock dataset:
 ```sh
 python train.py
 ```
-The trained model will be saved in `models/lstm_model.pth`.
+The trained model will be saved in `models/lstm_stock_price_model.pth`.
 
 ### **4. Run the API**
 Start the FastAPI server:
