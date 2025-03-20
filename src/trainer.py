@@ -6,19 +6,34 @@ from sklearn.metrics import mean_squared_error
 import numpy as np
 from src.model import LSTMModel
 from src.data_preprocessing import StockDataProcessor
+from src.utils.data_models import EvaluationMetrics
 
 
-class StockTrainer(StockDataProcessor):  
+class StockTrainer(StockDataProcessor):
     def __init__(
         self,
-        file_path,
-        model_save_path="models/lstm_model.pth",
-        batch_size=32,
-        epochs=50,
-        lr=0.001,
-        seq_length=60,
+        file_path: str,
+        model_save_path: str = "models/lstm_model.pth",
+        batch_size: int = 32,
+        epochs: int = 50,
+        lr: float = 0.001,
+        seq_length: int = 60,
     ):
-        super().__init__(file_path, seq_length)  
+        """
+        Initialize the StockTrainer class with the given parameters.
+
+        Parameters:
+        - file_path (str): The path to the CSV file containing stock data.
+        - model_save_path (str): The path where the trained LSTM model will be saved. Default is "models/lstm_model.pth".
+        - batch_size (int): The batch size for training and testing. Default is 32.
+        - epochs (int): The number of training epochs. Default is 50.
+        - lr (float): The learning rate for the optimizer. Default is 0.001.
+        - seq_length (int): The length of the input sequence for the LSTM model. Default is 60.
+
+        Returns:
+        - None
+        """
+        super().__init__(file_path, seq_length)
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.model = LSTMModel().to(self.device)
         self.epochs = epochs
@@ -26,11 +41,12 @@ class StockTrainer(StockDataProcessor):
         self.batch_size = batch_size
         self.model_save_path = model_save_path
 
+
     def train(self):
         """Train the LSTM model using preprocessed stock data."""
         X_train, y_train, X_test, y_test = (
             self.get_data()
-        )  # Directly use inherited method
+        )  
 
         train_loader = DataLoader(
             TensorDataset(X_train, y_train), batch_size=self.batch_size, shuffle=True
@@ -64,7 +80,7 @@ class StockTrainer(StockDataProcessor):
         # Evaluate model after training
         self.evaluate(test_loader)
 
-    def evaluate(self, test_loader):
+    def evaluate(self, test_loader: DataLoader) -> EvaluationMetrics:
         """Evaluate the trained model on the test set using the test DataLoader."""
         self.model.eval()
         predictions, actuals = [], []
@@ -73,9 +89,7 @@ class StockTrainer(StockDataProcessor):
             for (
                 X_batch,
                 y_batch,
-            ) in (
-                test_loader
-            ):  
+            ) in test_loader:
                 X_batch, y_batch = X_batch.to(self.device), y_batch.to(self.device)
                 y_pred = self.model(X_batch).cpu().numpy()
                 predictions.extend(y_pred.flatten())
@@ -88,4 +102,4 @@ class StockTrainer(StockDataProcessor):
         print(f"Mean Squared Error (MSE): {mse:.4f}")
         print(f"Root Mean Squared Error (RMSE): {rmse:.4f}")
 
-        return mse, rmse
+        return EvaluationMetrics(mse=mse, rmse=rmse)
