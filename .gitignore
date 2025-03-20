@@ -1,0 +1,86 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+*.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Poetry virtual environment
+.poetry/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS system files
+.DS_Store
+
+# Log files
+logs/
+*.log
+
+# Local development settings
+.env
+.env.local
+*.ini
+*.toml
+*.cfg
+
+# PyTest and Coverage
+htmlcov/
+.coverage
+*.cover
+.cache/
+nosetests.xml
+coverage.xml
+*.pytest_cache/
+tox/
+
+# MyPy type checking
+.mypy_cache/
+
+# Cython and C extensions
+*.so
+*.pyd
+*.dll
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+MANIFEST
+
+# Docker
+.dockerignore
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs (PyCharm)
+.idea/
+*.iml
+
+# Jupyter Lab
+.jupyter/
+
+# Machine Learning Artifacts
+model/
+*.h5
+*.pth
+*.ckpt
+tensorboard_logs/
+
+# Temporary files
+*.swp
+*.swo
+*.swn
+*.bak
+
+# AWS credentials
+.aws/

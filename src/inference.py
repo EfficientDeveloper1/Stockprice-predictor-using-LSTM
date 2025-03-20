@@ -9,7 +9,15 @@ class StockPredictor(StockDataProcessor):
         self, model_path="models/lstm_model.pth", file_path=None, seq_length=60
     ):
         super().__init__(file_path, seq_length)
-        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        # Automatic Device Selection for Apple Silicon Compatibility
+        if torch.backends.mps.is_available():
+            self.device = torch.device("mps")
+        elif torch.cuda.is_available():
+            self.device = torch.device("cuda")
+        else:
+            self.device = torch.device("cpu")
+        
+        print(f"Using device: {self.device}")
 
         # Load LSTM Model
         self.model = LSTMModel().to(self.device)
