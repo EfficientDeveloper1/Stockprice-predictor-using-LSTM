@@ -21,7 +21,9 @@ pip-delete-this-directory.txt
 
 # Log files
 logs/
-*.log
+
+
+
 
 # Local development settings
 .env
