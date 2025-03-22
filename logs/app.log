@@ -1,0 +1,51 @@
+
+2025-03-22 16:21:19,428 - StockPredictionApp - INFO - Using device: mps
+2025-03-22 16:21:21,249 - StockPredictionApp - INFO - Epoch 1/20, Loss: 0.0058
+2025-03-22 16:21:22,120 - StockPredictionApp - INFO - Epoch 2/20, Loss: 0.0001
+2025-03-22 16:21:22,988 - StockPredictionApp - INFO - Epoch 3/20, Loss: 0.0001
+2025-03-22 16:21:23,836 - StockPredictionApp - INFO - Epoch 4/20, Loss: 0.0001
+2025-03-22 16:21:24,703 - StockPredictionApp - INFO - Epoch 5/20, Loss: 0.0001
+2025-03-22 16:21:25,594 - StockPredictionApp - INFO - Epoch 6/20, Loss: 0.0001
+2025-03-22 16:21:26,489 - StockPredictionApp - INFO - Epoch 7/20, Loss: 0.0001
+2025-03-22 16:21:27,362 - StockPredictionApp - INFO - Epoch 8/20, Loss: 0.0000
+2025-03-22 16:21:28,243 - StockPredictionApp - INFO - Epoch 9/20, Loss: 0.0001
+2025-03-22 16:21:29,120 - StockPredictionApp - INFO - Epoch 10/20, Loss: 0.0000
+2025-03-22 16:21:30,115 - StockPredictionApp - INFO - Epoch 11/20, Loss: 0.0000
+2025-03-22 16:21:31,116 - StockPredictionApp - INFO - Epoch 12/20, Loss: 0.0000
+2025-03-22 16:21:32,005 - StockPredictionApp - INFO - Epoch 13/20, Loss: 0.0000
+2025-03-22 16:21:32,879 - StockPredictionApp - INFO - Epoch 14/20, Loss: 0.0000
+2025-03-22 16:21:33,753 - StockPredictionApp - INFO - Epoch 15/20, Loss: 0.0000
+2025-03-22 16:21:34,630 - StockPredictionApp - INFO - Epoch 16/20, Loss: 0.0000
+2025-03-22 16:21:35,486 - StockPredictionApp - INFO - Epoch 17/20, Loss: 0.0000
+2025-03-22 16:21:36,356 - StockPredictionApp - INFO - Epoch 18/20, Loss: 0.0000
+2025-03-22 16:21:37,230 - StockPredictionApp - INFO - Epoch 19/20, Loss: 0.0000
+2025-03-22 16:21:38,084 - StockPredictionApp - INFO - Epoch 20/20, Loss: 0.0000
+2025-03-22 16:21:38,090 - StockPredictionApp - INFO - Model saved to models/lstm_stock_price_model_v1.pth
+2025-03-22 16:21:38,230 - StockPredictionApp - INFO - Model Evaluation:
+2025-03-22 16:21:38,230 - StockPredictionApp - INFO - Mean Squared Error (MSE): 0.0003
+2025-03-22 16:21:38,230 - StockPredictionApp - INFO - Root Mean Squared Error (RMSE): 0.0185
+2025-03-22 16:24:20,981 - StockPredictionApp - INFO - Using device: mps
+2025-03-22 16:24:22,840 - StockPredictionApp - INFO - Epoch 1/20, Loss: 0.0016
+2025-03-22 16:24:23,712 - StockPredictionApp - INFO - Epoch 2/20, Loss: 0.0012
+2025-03-22 16:24:24,579 - StockPredictionApp - INFO - Epoch 3/20, Loss: 0.0003
+2025-03-22 16:24:25,457 - StockPredictionApp - INFO - Epoch 4/20, Loss: 0.0000
+2025-03-22 16:24:26,325 - StockPredictionApp - INFO - Epoch 5/20, Loss: 0.0000
+2025-03-22 16:24:27,189 - StockPredictionApp - INFO - Epoch 6/20, Loss: 0.0000
+2025-03-22 16:24:28,053 - StockPredictionApp - INFO - Epoch 7/20, Loss: 0.0000
+2025-03-22 16:24:28,936 - StockPredictionApp - INFO - Epoch 8/20, Loss: 0.0000
+2025-03-22 16:24:29,777 - StockPredictionApp - INFO - Epoch 9/20, Loss: 0.0000
+2025-03-22 16:24:30,612 - StockPredictionApp - INFO - Epoch 10/20, Loss: 0.0000
+2025-03-22 16:24:31,454 - StockPredictionApp - INFO - Epoch 11/20, Loss: 0.0000
+2025-03-22 16:24:32,291 - StockPredictionApp - INFO - Epoch 12/20, Loss: 0.0000
+2025-03-22 16:24:33,134 - StockPredictionApp - INFO - Epoch 13/20, Loss: 0.0000
+2025-03-22 16:24:33,972 - StockPredictionApp - INFO - Epoch 14/20, Loss: 0.0000
+2025-03-22 16:24:34,813 - StockPredictionApp - INFO - Epoch 15/20, Loss: 0.0000
+2025-03-22 16:24:35,658 - StockPredictionApp - INFO - Epoch 16/20, Loss: 0.0000
+2025-03-22 16:24:36,524 - StockPredictionApp - INFO - Epoch 17/20, Loss: 0.0000
+2025-03-22 16:24:37,352 - StockPredictionApp - INFO - Epoch 18/20, Loss: 0.0000
+2025-03-22 16:24:38,203 - StockPredictionApp - INFO - Epoch 19/20, Loss: 0.0000
+2025-03-22 16:24:39,056 - StockPredictionApp - INFO - Epoch 20/20, Loss: 0.0000
+2025-03-22 16:24:39,061 - StockPredictionApp - INFO - Model saved to models/lstm_stock_price_model_nvidia.pth
+2025-03-22 16:24:39,196 - StockPredictionApp - INFO - Model Evaluation:
+2025-03-22 16:24:39,197 - StockPredictionApp - INFO - Mean Squared Error (MSE): 0.0150
+2025-03-22 16:24:39,197 - StockPredictionApp - INFO - Root Mean Squared Error (RMSE): 0.1224
