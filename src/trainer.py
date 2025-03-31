@@ -14,7 +14,7 @@ class StockTrainer(StockDataProcessor):
     def __init__(
         self,
         file_path: str,
-        model_save_path: str = "models/lstm_stock_price_model_apple.pth",
+        model_save_path: str = "models/lstm_stock_price_model_NVDA.pth",
         batch_size: int = 32,
         epochs: int = 50,
         lr: float = 0.001,
@@ -139,7 +139,7 @@ class StockTrainerMutipleOutput(StockDataProcessorMutipleOutput):
         self.model_save_path = model_save_path
 
     def train(self):
-        X_train, y_train, X_test, y_test = self.processor.get_data()
+        X_train, y_train, X_test, y_test = self.get_data()
         train_loader = DataLoader(
             TensorDataset(X_train, y_train), batch_size=self.batch_size, shuffle=True
         )
