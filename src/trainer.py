@@ -229,7 +229,7 @@ class StockTrainerMutipleOutput(StockDataProcessorMutipleOutput):
         self.model_save_path = model_save_path
 
     def train(self):
-        X_train, y_train, X_test, y_test = self.processor.get_data()
+        X_train, y_train, X_test, y_test = self.get_data()
         train_loader = DataLoader(
             TensorDataset(X_train, y_train), batch_size=self.batch_size, shuffle=True
         )
