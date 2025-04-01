@@ -24,7 +24,7 @@ class StockDataProcessor:
         df["RSI"] = ta.momentum.rsi(df["Close"], window=14)
         df["MACD"] = ta.trend.macd(df["Close"])
 
-        df.fillna(method="bfill", inplace=True)
+        df.bfill(inplace=True)
         return df
 
     def preprocess_data(self, df):
@@ -34,10 +34,11 @@ class StockDataProcessor:
 
     def create_sequences(self, data):
         """Creates sequences for LSTM training."""
-        sequences, labels = [], []
+        sequences, labels = [], [] # X samples and y labels
         for i in range(len(data) - self.seq_length):
             sequences.append(data[i : i + self.seq_length])
             labels.append(data[i + self.seq_length][3])  # Predicting Close price
+        # print(f"Sequences: {sequences} \n labels: {labels}" )
         return torch.stack(sequences), torch.FloatTensor(labels).view(-1, 1)
 
     def get_data(self):
@@ -46,6 +47,7 @@ class StockDataProcessor:
         processed_data = self.preprocess_data(df)
         X, y = self.create_sequences(processed_data)
         train_size = int(len(X) * 0.8)
+        # print(f"Length of the Training set >> {train_size} samples")
         return X[:train_size], y[:train_size], X[train_size:], y[train_size:]
 
     def transform(self, new_data):
@@ -64,7 +66,7 @@ class StockDataProcessor:
                 "MACD",
             ],
         )
-        df.fillna(method="bfill", inplace=True)
+        df.bfill(inplace=True)
 
         # Ensure the scaler is already fitted (use previously learned scaling parameters)
         scaled_data = self.scaler.transform(df)
@@ -90,7 +92,7 @@ class StockDataProcessorMutipleOutput:
         df['RSI'] = ta.momentum.rsi(df['Close'], window=14)
         df['MACD'] = ta.trend.macd(df['Close'])
 
-        df.fillna(method="bfill", inplace=True)  # Fill missing values
+        df.bfill(inplace=True)  # Fill missing values
         return df
     
     def preprocess_data(self, df: pd.DataFrame) -> torch.Tensor:

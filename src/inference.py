@@ -1,5 +1,12 @@
 import torch
+import ta
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from typing import Tuple, Dict, Any
+from torch.utils.data import DataLoader, TensorDataset
+from dataclasses import dataclass
 from src.model import LSTMModel
 from src.data_preprocessing import StockDataProcessor
 
@@ -33,3 +40,6 @@ class StockPredictor(StockDataProcessor):
             prediction = self.model(input_tensor).cpu().numpy()
 
         return float(prediction[0][0])
+    
+
+

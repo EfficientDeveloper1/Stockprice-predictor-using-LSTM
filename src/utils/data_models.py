@@ -21,16 +21,20 @@ class ProcessedStockData:
 @dataclass
 class TrainingConfig:
     """Holds hyperparameters for model training."""
-    epochs: int
-    batch_size: int
-    learning_rate: float
-    seq_length: int
+    epochs: int = 50
+    batch_size: int = 32
+    learning_rate: float = 0.001
+    seq_length: int = 60
+
 
 @dataclass
 class EvaluationMetrics:
     """Stores model evaluation metrics."""
     mse: float
     rmse: float
+    mae: float = None
+    r2: float = None
+    directional_accuracy: float = None
 
 @dataclass
 class PredictionInput:
