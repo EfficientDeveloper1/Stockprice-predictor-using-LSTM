@@ -6,6 +6,7 @@ pandas
 scikit-learn  
 matplotlib  
 ta
+seaborn
 
 # FastAPI & API dependencies
 fastapi   
