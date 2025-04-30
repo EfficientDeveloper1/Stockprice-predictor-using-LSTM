@@ -206,7 +206,7 @@ class StockTrainerMutipleOutput(StockDataProcessorMutipleOutput):
     def __init__(
         self,
         file_path: str,
-        model_save_path: str = "models/lstm_model.pth",
+        model_save_path: str = "models/lstm_tsla_stock.pth",
         batch_size: int = 32,
         epochs: int = 50,
         lr: float = 0.001,

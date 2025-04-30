@@ -3,7 +3,7 @@ import torch.nn as nn
 
 
 class LSTMModel(nn.Module):
-    def __init__(self, input_size=9, hidden_size=50, num_layers=2):
+    def __init__(self, input_size=18, hidden_size=50, num_layers=2):
         super(LSTMModel, self).__init__()
         self.hidden_size = hidden_size
         self.num_layers = num_layers
@@ -20,7 +20,7 @@ class LSTMModel(nn.Module):
 
 
 class LSTMModelMutipleOutput(nn.Module):
-    def __init__(self, input_size: int = 9, hidden_size: int = 64, num_layers: int = 2, output_size: int = 5):
+    def __init__(self, input_size: int = 18, hidden_size: int = 64, num_layers: int = 2, output_size: int = 5):
         """
         LSTM Model for Stock Prediction
         input_size: Number of features in the dataset
