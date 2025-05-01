@@ -13,7 +13,7 @@ from src.data_preprocessing import StockDataProcessor
 
 class StockPredictor(StockDataProcessor):
     def __init__(
-        self, model_path="models/lstm_nvda_stock.pth", file_path=None, seq_length=60
+        self, model_path="../models/lstm_nvda_stock.pth", file_path=None, seq_length=60
     ):
         super().__init__(file_path, seq_length)
         # Automatic Device Selection for Apple Silicon Compatibility

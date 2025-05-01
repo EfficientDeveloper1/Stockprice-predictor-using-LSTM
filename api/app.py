@@ -39,3 +39,13 @@ def retrain_model():
     """Retrain the LSTM model with updated stock data."""
     trainer.train()
     return {"status": "Model retrained and saved successfully"}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "app:app",
+        host = "0.0.0.0",
+        port = 8001,
+        reload= True
+    )
