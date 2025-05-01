@@ -27,7 +27,7 @@ class StockTrainer(StockDataProcessor):
         self,
         training_config: TrainingConfig,
         file_path: str,
-        model_save_path: str = "models/lstm_stock_price_model_apple.pth",
+        model_save_path: str = "models/lstm_nvda_stock.pth",
     ):
         """
         Initialize the StockTrainer class with the given parameters.
