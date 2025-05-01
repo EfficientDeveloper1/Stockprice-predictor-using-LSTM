@@ -83,19 +83,29 @@ The API will be available at `http://127.0.0.1:8000`.
 
 ## API Usage
 ### **1. Make Predictions**
-Send a POST request to the API with 60 days of stock data:
+Send a POST request to the API with the ticker and number of days to predict:
 ```sh
 curl -X 'POST' \
   'http://127.0.0.1:8000/predict' \
   -H 'Content-Type: application/json' \
-  -d '{"features": [[... 60 days of data ...]]}'
+  -d '{
+  "ticker": "NVDA",
+  "days": numbers of days
+}'
 ```
 **Example Response:**
 ```json
 {
-  "predicted_price": 150.25
+  "ticker": "NVDA",
+  "data": {
+    "predictions": [],
+    "timestamp": "string"
+  }
 }
 ```
+Or a get request
+
+`http://localhost:8000/api/v1/predict/{ticker}?days={days}`
 
 ---
 
