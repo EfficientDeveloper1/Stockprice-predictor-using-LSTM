@@ -1,16 +1,17 @@
 # Core dependencies
-torch    
+torch
 torchvision
-numpy   
-pandas     
+numpy
+pandas
 scikit-learn  
 matplotlib  
 ta
 seaborn
 
 # FastAPI & API dependencies
-fastapi   
-uvicorn  
+fastapi
+uvicorn
+python-multipart
 
 # Data processing
 requests   
@@ -27,3 +28,10 @@ huggingface_hub
 # If using Jupyter Notebooks
 ipython
 notebook
+
+# Additional dependencies
+python-dotenv
+
+# Streamlit frontend dependencies
+streamlit
+plotly
