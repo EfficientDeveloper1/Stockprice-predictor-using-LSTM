@@ -24,6 +24,19 @@ class StockDataProcessor:
         df["RSI"] = ta.momentum.rsi(df["Close"], window=14)
         df["MACD"] = ta.trend.macd(df["Close"])
 
+        
+        bb_indicator = ta.volatility.BollingerBands(close=df["Close"], window=20)
+        df["BB_High"] = bb_indicator.bollinger_hband()
+        df["BB_Low"] = bb_indicator.bollinger_lband()
+        df["BB_Middle"] = bb_indicator.bollinger_mavg()
+        df["BB_Width"] = bb_indicator.bollinger_wband()
+
+        df["ATR"] = ta.volatility.average_true_range(df["High"], df["Low"], df["Close"], window=14)
+        df["Stoch_K"] = ta.momentum.stoch(df["High"], df["Low"], df["Close"])
+        df["Stoch_D"] = ta.momentum.stoch_signal(df["High"], df["Low"], df["Close"])
+        df["CCI"] = ta.trend.cci(df["High"], df["Low"], df["Close"])
+        df["OBV"] = ta.volume.on_balance_volume(df["Close"], df["Volume"])
+
         df.bfill(inplace=True)
         return df
 
@@ -64,6 +77,15 @@ class StockDataProcessor:
                 "EMA_10",
                 "RSI",
                 "MACD",
+                "BB_High",
+                "BB_Low",
+                "BB_Width",
+                "BB_Middle",
+                "ATR",
+                "Stoch_k",
+                "Stoch_D",
+                "CCI",
+                "OBV",
             ],
         )
         df.bfill(inplace=True)
@@ -91,6 +113,18 @@ class StockDataProcessorMutipleOutput:
         df['EMA_10'] = ta.trend.ema_indicator(df['Close'], window=10)
         df['RSI'] = ta.momentum.rsi(df['Close'], window=14)
         df['MACD'] = ta.trend.macd(df['Close'])
+
+        bb_indicator = ta.volatility.BollingerBands(close=df["Close"], window=20)
+        df["BB_High"] = bb_indicator.bollinger_hband()
+        df["BB_Low"] = bb_indicator.bollinger_lband()
+        df["BB_Middle"] = bb_indicator.bollinger_mavg()
+        df["BB_Width"] = bb_indicator.bollinger_wband()
+
+        df["ATR"] = ta.volatility.average_true_range(df["High"], df["Low"], df["Close"], window=14)
+        df["Stoch_K"] = ta.momentum.stoch(df["High"], df["Low"], df["Close"])
+        df["Stoch_D"] = ta.momentum.stoch_signal(df["High"], df["Low"], df["Close"])
+        df["CCI"] = ta.trend.cci(df["High"], df["Low"], df["Close"])
+        df["OBV"] = ta.volume.on_balance_volume(df["Close"], df["Volume"])
 
         df.bfill(inplace=True)  # Fill missing values
         return df

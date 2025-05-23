@@ -8,7 +8,7 @@ training_config = TrainingConfig(
 
 trainer = StockTrainer(
     training_config=training_config,
-    model_save_path="models/lstm_tsla_stock.pth",
+    model_save_path="models/lstm_nvda_stock.pth",
     file_path="data/NVDA_stock_data.csv")
 
 trainer.train()  # Start training
